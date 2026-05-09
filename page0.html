@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        video {
+            width: 100%;
+            max-width: 600px; /* Limit video width */
+            margin: 20px 0; /* Space above and below the video */
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin: 5px; /* Space between buttons */
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Please press the play button to know about the website</h1>
+        <video controls>
+            <source src="your_video.mp4" type="video/mp4"> <!-- Replace with your video file -->
+            Your browser does not support the video tag.
+        </video>
+        <h2>Want to dip? Just login/register as:</h2>
+        <button onclick="window.location.href='indexPage1.php'">Student</button>
+        <button onclick="window.location.href='login_registerPage3.php'">Teacher</button>
+        <button onclick="window.location.href='admin_login_registerPage5.html'">Admin</button>
+    </div>
+</body>
+</html>

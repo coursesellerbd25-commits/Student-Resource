@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.toggle-button.active {
+    background-color: #0056b3; /* Active button color */
+}
+
+.form-section {
+    display: none; /* Hide all sections by default */
+    opacity: 0; /* Start with opacity 0 for animation */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.form-section.active {
+    display: block; /* Show the active section */
+    opacity: 1; /* Fade in */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin: 2px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+#forgot-password {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#forgot-password:hover {
+    text-decoration: underline;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between; /* Space between checkbox and button */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.options label {
+    margin: 0; /* Remove margin from label to prevent wrapping */
+}
+
+#reset-data {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0; /* Remove padding for better alignment */
+    margin-left: 10px; /* Add some space between checkbox and button */
+}

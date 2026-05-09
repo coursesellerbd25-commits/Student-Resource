@@ -1,0 +1,425 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    padding-bottom: 0px;
+    background: #504a6e;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Align logout button to the right */
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ddb16f;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.dashboard-content {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.header-accessibility {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the elements */
+    margin-top: 10px;
+}
+
+#current-time {
+    font-size: 16px;
+    color: #ffffff;
+    font-style: bold;
+    margin-left: 70px;
+}
+
+#language-settings {
+    margin-left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#search-bar {
+    margin-left: 30%;
+    margin-bottom: auto;
+    justify-content: left;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#logout-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #ff4b4b, #d62828);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-left: 15px;
+}
+
+#logout-button:hover {
+    background: linear-gradient(135deg, #d62828, #a4161a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+#logout-button:active {
+    transform: scale(0.97);
+}
+
+#chatbot-button {
+    position: fixed; /* Fix the position */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #ddb16f; /* Button color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make it circular */
+    font-size: 24px; /* Adjust size for the chatbot icon */
+    cursor: pointer;
+    padding: 10px; /* Add some padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#chatbot-button:hover {
+    background-color: #c9a05a; /* Darker shade on hover */
+}
+
+#chatbot-container {
+    position: fixed; /* Fix the position */
+    bottom: 80px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 300px; /* Width of the chatbot */
+    height: 400px; /* Height of the chatbot */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#chatbot-container header {
+    background-color: #001f3f; /* Dark navy color */
+    color: #fff; /* White text */
+    padding: 10px;
+    text-align: center; /* Center the header text */
+}
+
+#chatbot-container .close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #fff; /* White text */
+    cursor: pointer;
+    font-size: 16px; /* Adjust size */
+}
+
+#chatbot-container .input-area {
+    display: flex; /* Use flexbox for input area */
+    padding: 10px; /* Padding for input area */
+}
+
+#chatbot-container input[type="text"] {
+    flex: 1; /* Take available space */
+    padding: 5px; /* Padding for input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#chatbot-container button {
+    margin-left: 5px; /* Space between input and button */
+    padding: 5px 10px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #001f3f; /* Match header color */
+    color: #fff; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+nav {
+    background: #504a6e; /* Dark navy color to match the header */
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center; /* Center the nav content */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Center the list items */
+}
+
+nav ul li {
+    display: inline; /* Keep list items inline */
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+    padding: 10px 50px; /* Add some padding for better click area */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    color: #504a6e; /* Change text color on hover */
+    background-color: #ffffff; /* Change background color on hover */
+}
+
+/* Active link highlighting (optional) */
+nav ul li a.active {
+    background-color: #ffffff; /* Active link background */
+    color: #504a6e; /* Active link text color */
+    font-weight: bold; /* Make active link bold */
+}
+
+main {
+    padding: 30px;
+    background: #504a6e;
+    margin: 0; /* Remove margins to avoid extra space */
+}
+
+section {
+    margin-bottom: 20px;
+    display: block; /* Ensure sections are displayed as block */
+    text-align: left; /* Align text to the left within sections */
+}
+
+.profile-info {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Space above the profile info */
+}
+
+#profile-pic {
+    width: 100px; /* Set width for profile picture */
+    height: 100px; /* Set height for profile picture */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 20px; /* Space between image and text */
+}
+
+
+.profile-details {
+    text-align: left; /* Align text to the left */
+}
+
+.profile-details p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #35424a; /* Label color */
+}
+
+input[type="text"] {
+    margin: 5px;
+    width: 0%; /* Full width for input fields */
+    padding: 8px; /* Padding for input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus {
+    border-color: #35424a; /* Change border color on focus */
+}
+
+#activity-form {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space above the form */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #35424a; /* Label color */
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%; /* Full width for input fields */
+    padding: 8px; /* Padding for input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #35424a; /* Change border color on focus */
+}
+
+button {
+    margin-top: 10px; /* Space above buttons */
+    padding: 8px 12px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+#activity-form {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space above the form */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #35424a; /* Label color */
+}
+
+input[type="text"], input[type="date"] {
+    width: 90%; /* Full width for input fields */
+    padding: 8px; /* Padding for input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #35424a; /* Change border color on focus */
+}
+
+button {
+    margin-top: 10px; /* Space above buttons */
+    padding: 8px 12px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+#applied-students-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#applied-students-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+#applied-students-list li {
+    margin: 5px 0; /* Space between list items */
+    color: white;
+}
+
+.student-item {
+    margin-bottom: 15px; /* Space between student items */
+}
+
+.student-item p {
+    margin: 0; /* Remove margin from paragraph */
+}
+
+.student-item label {
+    margin-right: 10px; /* Space between label and select */
+}
+
+#presence-table {
+    background-color: transparent; /* Make the table background transparent */
+    color: white; /* Set the text color to white */
+}
+
+#presence-table th {
+    background-color: #001f3f; /* Dark background for the header */
+    color: white; /* White text for the header */
+}
+
+#presence-table td {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for table cells */
+    color: white; /* White text for table cells */
+}
+
+#presence-table select {
+    background-color: #001f3f; /* Dark background for the dropdown */
+    color: white; /* White text for the dropdown */
+    border: 1px solid #ccc; /* Border for the dropdown */
+}

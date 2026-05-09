@@ -1,0 +1,355 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.language-settings {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between language and time */
+}
+
+.language-settings label {
+    margin-right: 5px; /* Space between label and dropdown */
+    color: #ffffff; /* Label color */
+}
+
+#language {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+#current-time {
+    color: #ffffff; /* Time color */
+}
+
+.logout-btn {
+    text-decoration: none;
+    background: linear-gradient(135deg, #ff4b5c, #ff6b81);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 75, 92, 0.3);
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #e63946, #ff4b5c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 75,92, 0.45);
+}
+
+nav {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center; /* Center the nav content */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Center the list items */
+}
+
+nav ul li {
+    display: inline; /* Keep list items inline */
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+    padding: 5px 10px; /* Add some padding for better click area */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    color: #35424a; /* Change text color on hover */
+    background-color: #ffffff; /* Change background color on hover */
+}
+
+main {
+    padding: 20px;
+    background: #ffffff;
+    margin-top: 10px;
+    text-align: center; /* Center the content in the main area */
+}
+
+section {
+    margin-bottom: 20px;
+    display: inline-block; /* Allow sections to be centered */
+    text-align: left; /* Align text to the left within sections */
+    width: 80%; /* Set a width for the sections */
+}
+
+.search-container {
+    position: relative; /* Position relative for absolute positioning of the icon */
+    display: inline-block; /* Keep the search container inline */
+    margin-top: 20px; /* Space above the search bar */
+}
+
+.search-container i {
+    position: absolute; /* Position the icon inside the search bar */
+    left: 10px; /* Space from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: #aaa; /* Icon color */
+}
+
+#search-bar {
+    padding: 10px 10px 10px 30px; /* Add padding to the left for the icon */
+    width: 80%; /* Adjust width to make it longer */
+    max-width: 800px; /* Set a maximum width */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Border radius set to 5px */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+#search-bar:focus {
+    border-color: #35424a; /* Change border color on focus */
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+#chatbot-icon img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+}
+
+/* Chatbot Styles */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+#chatbot-header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-messages {
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto; /* Scrollable messages */
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 5px 0; /* Space between messages */
+    max-width: 80%; /* Limit message width */
+}
+
+.message-you {
+    align-self: flex-end; /* Align "You" messages to the right */
+    background-color: #e1ffc7; /* Background color for "You" messages */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message-chatbot {
+    align-self: flex-start; /* Align "Chatbot" messages to the left */
+    background-color: #f1f1f1; /* Background color for "Chatbot" messages */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#chatbot-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Adjust for padding */
+}
+
+#send-message {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #35424a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#send-message:hover {
+    background-color: #2c3e50; /* Darker shade on hover */
+}
+
+#close-chatbot {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Space above the profile info */
+}
+
+#profile-pic {
+    width: 100px; /* Set width for profile picture */
+    height: 100px; /* Set height for profile picture */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-details {
+    text-align: left; /* Align text to the left */
+}
+
+.profile-details p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+.messaging-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between sections */
+    margin-top: 20px; /* Space above the messaging container */
+}
+
+.info-box, .messaging-zone, .chat-history-box {
+    border: 1px solid #ccc; /* Border for the boxes */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the boxes */
+    background-color: #ffffff; /* Background color */
+}
+
+.messaging-zone {
+    display: flex; /* Use flexbox for messaging zones */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.chat-history-box {
+    height: 200px; /* Set height for chat history */
+    overflow-y: auto; /* Scrollable chat history */
+    border: 1px solid #ddd; /* Border for chat history */
+    margin-top: 10px; /* Space above chat history */
+    padding: 5px; /* Padding inside chat history */
+}
+
+h3 {
+    margin: 10px 0; /* Space above and below headings */
+}
+
+input[type="text"] {
+    width: 80%; /* Full width for input fields */
+    padding: 8px; /* Padding for input fields */
+    margin-top: 10px; /* Space above input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    margin-top: 10px; /* Space above buttons */
+    padding: 8px 12px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+#attendance-chart {
+    margin-bottom: 20px; /* Space below the attendance chart */
+}
+
+#presence-table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+#presence-table th, #presence-table td {
+    border: 1px solid #ccc; /* Border for table cells */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+
+#absence-reasons {
+    margin-top: 20px; /* Space above absence reasons */
+}
+
+#absence-reason-list {
+    margin-top: 10px; /* Space above the absence reason list */
+}
+
+button {
+    margin-top: 10px; /* Space above buttons */
+    padding: 8px 12px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+main {
+    padding: 20px;
+    background: #ffffff;
+    margin-top: 10px;
+    text-align: center; /* Center the content in the main area */
+}
+
+#absence-reason-list {
+    margin-top: 20px;
+    text-align: left; /* Align text to the left */
+}

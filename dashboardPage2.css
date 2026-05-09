@@ -1,0 +1,280 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: rgba(44, 62, 80, 0.9); /* Added transparency */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timezone {
+  margin-right: 20px;
+}
+
+.language-selector {
+  margin-right: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px; /* Adjust width as needed */
+}
+
+.search-bar button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px; /* Space between input and button */
+}
+
+.logout {
+  margin-left: 15px;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #e60000;
+}
+
+.sections {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.dashboard-section {
+  background: rgba(52, 73, 94, 0.9); /* Added transparency */
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-section:hover {
+  background: rgba(26, 188, 156, 0.9); /* Added transparency */
+}
+
+.dashboard-section.active {
+  background: rgba(26, 188, 156, 0.9); /* Added transparency */
+}
+
+main {
+  padding: 2rem;
+}
+
+.me-section {
+  margin-bottom: 2rem;
+  display: none; /* Initially hidden */
+}
+
+.delivery-forms {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.3s;
+}
+
+.tab-button:hover {
+  background: rgba(41, 128, 185, 0.9); /* Added transparency */
+}
+
+.tab-button.active {
+  background: rgba(26, 188, 156, 0.9); /* Added transparency */
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9); /* Added transparency */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+}
+
+.form-container h2 {
+  margin-bottom: 1rem;
+}
+
+.form-container label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.form-container input, .form-container select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-container button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-message {
+  margin-top: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.student-connect {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9); /* Added transparency */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-connect button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: white;
+  border: none;
+  padding: 0.3rem 0.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.teacher-messaging button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: white;
+  border: none;
+  padding: 0.3rem 0.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background: #f9f9f9;
+}
+
+.chat-messages div {
+  margin: 0.5rem 0;
+}
+
+.co-curriculum {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9); /* Added transparency */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(25, 161, 121, 0.1);
+}
+
+.co-curriculum .activity {
+  margin-bottom: 1.5rem;
+}
+
+.co-curriculum .activity h2 {
+  margin: 1.5rem;}
+
+.co-curriculum button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(44, 62, 80, 0.9); /* Added transparency */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot button {
+  background: rgba(52, 152, 219, 0.9); /* Added transparency */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chatbot-window {
+  display: none;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.chatbot-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chatbot-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chatbot-input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  width: calc(100% - 60px);
+}

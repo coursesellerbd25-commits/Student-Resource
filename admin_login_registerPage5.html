@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login/Register</title>
+    <link rel="stylesheet" href="admin_login_registerPage5.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Login/Register</h1>
+        </header>
+
+        <nav>
+            <button id="login-toggle" class="toggle-button active">Login</button>
+            <button id="register-toggle" class="toggle-button">Register</button>
+        </nav>
+
+        <main>
+            <section id="login-section" class="form-section active">
+                <h2>Login</h2>
+                <form id="login-form" method="POST" action="admin_loginPage5.php">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" name="username" required>
+
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+
+                    <label class="show-password">
+                        <input type="checkbox" id="show-login-password">
+                        See Password
+                    </label>
+
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="remember-me-login"> Remember Me
+                        </label>
+                        <a href="#" id="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+
+           <section id="register-section" class="form-section">
+    <h2>Register</h2>
+    <form id="register-form" method="POST" action="admin_registerPage5.php">
+        <label for="register-name">Name:</label>
+        <input type="text" id="register-name" name="name" required>
+
+        <label for="register-username">Username:</label>
+        <input type="text" id="register-username" name="username" required>
+
+        <label for="register-id">ID:</label>
+        <input type="text" id="register-id" name="id" required>
+
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" name="password" required>
+
+        <label class="show-password">
+            <input type="checkbox" id="show-register-password">
+            See Password 
+        </label>
+
+        <label for="register-confirm-password">Confirm Password:</label>
+        <input type="password" id="register-confirm-password" name="confirm_password" required>
+
+        <label class="show-password">
+            <input type="checkbox" id="show-confirm-password">
+            See Password 
+        </label>
+
+        <div class="options">
+            <label>
+                <input type="checkbox" id="remember-me-register"> Remember Me</label>
+            <button type="button" id="reset-data">Reset Data</button>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+</section>
+
+        </main>
+    </div>
+
+    <script src="admin_login_registerPage5.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
