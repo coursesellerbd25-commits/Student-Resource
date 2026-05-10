@@ -34,12 +34,16 @@ io.on("connection", (socket) => {
             });
         }
     });
-
+    
     socket.on("disconnect", () => {
         console.log("User disconnected:", socket.id); 
     });
 });
 
-server.listen(3000, () => {
-    console.log("Socket server running on port 3000");
+app.get("/", (req, res) => {
+    res.send("Socket server running");
+});
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

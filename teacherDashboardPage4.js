@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000");
+const socket = io("https://student-resource-25-tzfm.onrender.com");
 
 // Function to change language
 function changeLanguage() {

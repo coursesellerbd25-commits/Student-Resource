@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000");
+const socket = io("https://student-resource-25-tzfm.onrender.com");
 socket.emit("register_user", {
   userId: CURRENT_USER_ID,
   userType: "student"
