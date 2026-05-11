@@ -156,3 +156,98 @@ $host = "localhost";
 $user = "root";
 $password = "";
 $database = "student_resource";
+```
+
+---
+
+## ▶️ Run Backend Server
+
+Install Node.js dependencies:
+
+```bash
+npm install
+```
+
+Run the Express server
+
+```bash
+node server.js
+```
+
+---
+
+## 📂 Project Structure
+
+```bash
+Student-Resource/
+|
+├── css/
+├── js/
+├── php/
+├── database/
+├── socket/
+├── server.js
+└── README.md
+```
+
+---
+
+## 🔐 User Roles
+
+| Role |Permissions |
+|------|------------|
+| Admin | Full system management |
+| Teacher | Activity/resource management |
+| Student | Apply and access resources |
+
+---
+
+## 🧩 Challenges Faced
+
+During development, one of the main challenges was integrating multiple technologies into a single full-stack workflow.
+
+Key Challeges Included:
+
+- Managing role-based authentication
+- Configuring MySQL relationships
+- Handling real-time communication using Socket.IO
+- Synchronizing PHP backend logic with Node.js services
+- Maintaining session management across multiple user types
+
+---
+
+## 📈 What I Learnt
+
+This project strengthened my understanding of: 
+
+- Full-stack web application architecture
+- Backend-focused system design
+- MySQL relational database management
+- Authentication and authorization systems
+- Express.js server handling
+- Real-time communication using Socket.IO
+- Multi-user dashboard development
+
+---
+
+## 🔮 Future Improvements
+
+- JWT authentication system
+- REST API architecture
+- Improved UI/UX design
+- Notification system
+- Better security practices
+
+---
+
+## 👨‍💻 Author
+
+Developed by Sultana Jahan Tahmina
+
+- GitHub: https://github.com/coursesellerbd25-commits
+- Portfolio: https://coursesellerbd25-commits.gihub.io/My-Portfolio-2025/
+
+---
+
+## ⭐ Support 
+If you found this project useful, consider giving it a star ⭐ on GitHub.
