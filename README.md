@@ -75,7 +75,7 @@ The system was developed as a backend-focused university project with emphasis o
 - MySQL
 
 ### Hosting
--InfinityFree
+- InfinityFree
 - Render
 
 ---
@@ -245,7 +245,7 @@ This project strengthened my understanding of:
 Developed by Sultana Jahan Tahmina
 
 - GitHub: https://github.com/coursesellerbd25-commits
-- Portfolio: https://coursesellerbd25-commits.gihub.io/My-Portfolio-2025/
+- Portfolio: https://coursesellerbd25-commits.github.io/My-Portfolio-2025/
 
 ---
 
