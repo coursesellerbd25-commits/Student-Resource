@@ -1,61 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Website</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-        video {
-            width: 100%;
-            max-width: 600px; /* Limit video width */
-            margin: 20px 0; /* Space above and below the video */
-        }
-        button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            margin: 5px; /* Space between buttons */
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3; /* Darker shade on hover */
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Resource Management System</title>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:1100px;
+    color:white;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation:fadeDown 1s ease;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:40px;
+    line-height:1.7;
+    animation:fadeUp 1.2s ease;
+}
+
+/* SLIDER */
+
+.slider{
+    width:100%;
+    max-width:900px;
+    height:420px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    animation:fadeSlide 15s infinite;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide:nth-child(1){
+    animation-delay:0s;
+}
+.slide:nth-child(2){
+    animation-delay:5s;
+}
+.slide:nth-child(3){
+    animation-delay:10s;
+}
+
+@keyframes fadeSlide{
+    0%{opacity:0;}
+    10%{opacity:1;}
+    30%{opacity:1;}
+    40%{opacity:0;}
+    100%{opacity:0;}
+}
+
+.role-buttons{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.role-card{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:25px;
+    width:280px;
+    border-radius:20px;
+    transition:0.4s;
+    backdrop-filter:blur(8px);
+}
+
+.role-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    background:rgba(255,255,255,0.2);
+}
+
+.role-card h3{
+    margin-bottom:10px;
+    font-size:1.5rem;
+}
+
+.role-card p{
+    font-size:0.95rem;
+    margin-bottom:20px;
+}
+
+.role-card button{
+    padding:12px 22px;
+    border:none;
+    border-radius:30px;
+    background:#00bfff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.role-card button:hover{
+    background:#008ecc;
+    transform:scale(1.05);
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:20px;
+    color:#0d1b2a;
+}
+
+.section-subtitle{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 50px;
+    color:#555;
+    line-height:1.8;
+}
+
+/* ABOUT */
+
+.about-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.about-buttons a{
+    text-decoration:none;
+}
+
+.about-buttons button{
+    padding:13px 24px;
+    border:none;
+    border-radius:40px;
+    background:#0d6efd;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.about-buttons button:hover{
+    background:#084298;
+    transform:translateY(-3px);
+}
+
+/* LEARNED */
+
+.learn-box{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.learn-box ul{
+    margin-top:20px;
+    line-height:2;
+}
+
+.learn-box li{
+    margin-left:20px;
+}
+
+/* TECH STACK */
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.tech-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.tech-card:hover{
+    transform:translateY(-8px);
+}
+
+.tech-card i{
+    font-size:3rem;
+    margin-bottom:15px;
+    color:#0d6efd;
+}
+
+.tech-card h3{
+    margin-bottom:10px;
+}
+
+/* PRESENTATION */
+
+.presentation{
+    background:#0d1b2a;
+    color:white;
+    border-radius:30px;
+    padding:50px;
+}
+
+.presentation ul{
+    line-height:2;
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.presentation button{
+    margin-top:30px;
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    background:#00bfff;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.presentation button:hover{
+    background:#008ecc;
+}
+
+/* CTA CARD */
+
+.cta-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+.cta-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.cta-content{
+    padding:40px;
+    text-align:center;
+}
+
+.cta-content h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.cta-buttons{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.cta-buttons button{
+    padding:13px 24px;
+    border:none;
+    border-radius:30px;
+    background:#0d6efd;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cta-buttons button:hover{
+    background:#084298;
+}
+
+/* FOOTER */
+
+footer{
+    background:#08111f;
+    color:white;
+    padding:60px 10% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer-links a{
+    display:block;
+    color:#ddd;
+    margin:10px 0;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#00bfff;
+}
+
+.social-icons{
+    margin-top:20px;
+}
+
+.social-icons a{
+    color:white;
+    font-size:1.5rem;
+    margin-right:15px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#00bfff;
+}
+
+.copy{
+    margin-top:50px;
+    text-align:center;
+    color:#aaa;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:20px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .slider{
+        height:250px;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .cta-content h2{
+        font-size:2rem;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Please press the play button to know about the website</h1>
-        <video controls>
-            <source src="your_video.mp4" type="video/mp4"> <!-- Replace with your video file -->
-            Your browser does not support the video tag.
-        </video>
-        <h2>Want to dip? Just login/register as:</h2>
-        <button onclick="window.location.href='indexPage1.php'">Student</button>
-        <button onclick="window.location.href='login_registerPage3.php'">Teacher</button>
-        <button onclick="window.location.href='admin_login_registerPage5.html'">Admin</button>
+
+<!-- ================= HERO SECTION ================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>Student Resource Management System</h1>
+
+        <p>
+            A complete web-based platform for Students, Teachers, and Admins
+            to manage academic activities, communication, resources, and collaboration efficiently.
+        </p>
+
+        <!-- IMAGE SLIDER -->
+
+        <div class="slider">
+
+            <div class="slide">
+                <img src="student_dashboard.jpg" alt="Student Dashboard">
+            </div>
+
+            <div class="slide">
+                <img src="teacher_dashboard.jpg" alt="Teacher Dashboard">
+            </div>
+
+            <div class="slide">
+                <img src="admin_dashboard.jpg" alt="Admin Dashboard">
+            </div>
+
+        </div>
+
+        <!-- ROLE BUTTONS -->
+
+        <div class="role-buttons">
+
+            <div class="role-card">
+                <h3>Student Panel</h3>
+                <p>
+                    Access study resources, activities, announcements,
+                    applications, and collaboration opportunities.
+                </p>
+
+                <button onclick="window.location.href='indexPage1.php'">
+                    Explore Student
+                </button>
+            </div>
+
+            <div class="role-card">
+                <h3>Teacher Panel</h3>
+                <p>
+                    Manage student activities, uploads, notices,
+                    and communication from a powerful dashboard.
+                </p>
+
+                <button onclick="window.location.href='login_registerPage3.php'">
+                    Explore Teacher
+                </button>
+            </div>
+
+            <div class="role-card">
+                <h3>Admin Panel</h3>
+                <p>
+                    Control users, monitor platform activity,
+                    and manage the entire system securely.
+                </p>
+
+                <button onclick="window.location.href='admin_login_registerPage5.html'">
+                    Explore Admin
+                </button>
+            </div>
+
+        </div>
+
     </div>
+
+</header>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <h2 class="section-title">About This Website</h2>
+
+    <p class="section-subtitle">
+        This Student Resource Management System was developed as a full-stack academic project
+        to simplify collaboration between students, teachers, and administrators.
+        The system includes dashboards, activity management, authentication,
+        real-time interactions, database integration, and deployment features.
+    </p>
+
+    <div class="about-buttons">
+
+        <a href="presentation.pptx" download>
+            <button>View PPTX Presentation</button>
+        </a>
+
+        <a href="https://github.com/yourusername/yourrepo" target="_blank">
+            <button>GitHub Repository</button>
+        </a>
+
+        <button onclick="window.location.href='indexPage1.php'">
+            Student Features
+        </button>
+
+        <button onclick="window.location.href='login_registerPage3.php'">
+            Teacher Features
+        </button>
+
+        <button onclick="window.location.href='admin_login_registerPage5.html'">
+            Admin Features
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= WHAT I LEARNED ================= -->
+
+<section id="learned">
+
+    <h2 class="section-title">What I Learned</h2>
+
+    <div class="learn-box">
+
+        <p>
+            Through this project, I gained practical experience in both frontend
+            and backend web development while learning real-world deployment workflows.
+        </p>
+
+        <ul>
+            <li>Frontend design using HTML, CSS, and JavaScript</li>
+            <li>Backend logic and authentication using PHP</li>
+            <li>Database management with MySQL</li>
+            <li>Building login and registration systems</li>
+            <li>Working with Socket.IO for communication features</li>
+            <li>Hosting and deployment using InfinityFree and Render</li>
+            <li>Version control using Git and GitHub</li>
+            <li>Creating responsive UI and interactive effects</li>
+            <li>Understanding real-world project structure</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ================= TECH STACK ================= -->
+
+<section id="tech">
+
+    <h2 class="section-title">Tech Stack</h2>
+
+    <p class="section-subtitle">
+        These technologies helped build the complete architecture of the project,
+        from frontend design to backend logic and deployment.
+    </p>
+
+    <div class="tech-grid">
+
+        <div class="tech-card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML, CSS & JS</h3>
+            <p>
+                Used for designing responsive interfaces,
+                animations, interactions, and overall website structure.
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fab fa-php"></i>
+            <h3>PHP & MySQL</h3>
+            <p>
+                Used to build authentication systems,
+                backend processing, and database connectivity.
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fas fa-plug"></i>
+            <h3>Socket.IO</h3>
+            <p>
+                Learned real-time communication concepts
+                and event-based interaction systems.
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git & GitHub</h3>
+            <p>
+                Learned version control, project management,
+                commits, pushes, and collaboration workflow.
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fas fa-server"></i>
+            <h3>Render & InfinityFree</h3>
+            <p>
+                Used for deployment, hosting,
+                database connectivity, and public access management.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PRESENTATION ================= -->
+
+<section id="presentation">
+
+    <div class="presentation">
+
+        <h2 class="section-title" style="color:white;">About The Presentation</h2>
+
+        <p>
+            The PowerPoint presentation explains the complete workflow,
+            architecture, features, and development process of the project.
+        </p>
+
+        <ul>
+            <li>Project overview and objectives</li>
+            <li>System architecture explanation</li>
+            <li>Student, Teacher, and Admin workflows</li>
+            <li>Database and backend explanation</li>
+            <li>Frontend design demonstration</li>
+            <li>Deployment and hosting process</li>
+            <li>Challenges faced and solutions</li>
+            <li>Future improvements and scalability ideas</li>
+        </ul>
+
+        <a href="presentation.pptx" download>
+            <button>Download Presentation</button>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section id="dip">
+
+    <div class="cta-card">
+
+        <img src="welcome_banner.jpg" alt="Welcome">
+
+        <div class="cta-content">
+
+            <h2>Want To Dip?</h2>
+
+            <p>
+                Choose your role and explore the complete system experience.
+            </p>
+
+            <div class="cta-buttons">
+
+                <button onclick="window.location.href='indexPage1.php'">
+                    Student
+                </button>
+
+                <button onclick="window.location.href='login_registerPage3.php'">
+                    Teacher
+                </button>
+
+                <button onclick="window.location.href='admin_login_registerPage5.html'">
+                    Admin
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h2>Student Resource System</h2>
+
+            <p style="margin-top:15px; line-height:1.8; color:#ccc;">
+                A complete academic resource and collaboration platform
+                developed using full-stack web technologies.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="#about">About</a>
+            <a href="#learned">What I Learned</a>
+            <a href="#tech">Tech Stack</a>
+            <a href="#presentation">Presentation</a>
+            <a href="#dip">Want To Dip?</a>
+
+        </div>
+
+        <div>
+
+            <h3>Connect With Me</h3>
+
+            <div class="social-icons">
+
+                <a href="https://linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://wa.me/8801XXXXXXXXX" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="mailto:yourmail@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://github.com/yourusername" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copy">
+        © 2026 Student Resource Management System | Developed By You
+    </div>
+
+</footer>
+
+<script>
+
+/* OPTIONAL SMALL EFFECT */
+
+window.addEventListener('scroll', () => {
+
+    const cards = document.querySelectorAll('.tech-card, .role-card');
+
+    cards.forEach(card => {
+
+        const position = card.getBoundingClientRect().top;
+
+        if(position < window.innerHeight - 100){
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
